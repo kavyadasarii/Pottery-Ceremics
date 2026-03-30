@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog – ClayCraft Pottery Studio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../global-css/global.css"/>
+  <link rel="stylesheet" href="../global-css/navbar.css"/>
+
+  <!-- Blog Page Styles -->
+  <link rel="stylesheet" href="blog.css"/>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="section-eyebrow">ClayCraft Journal</p>
+      <h1 class="page-hero-title">Stories from the <em>Studio</em></h1>
+      <p class="page-hero-sub">Tips, techniques, inspiration, and tales from potters who've shaped something beautiful — right here in Hyderabad.</p>
+    </div>
+    <div class="page-hero-bg-shape"></div>
+  </section>
+
+  <!-- ===== FEATURED POST ===== -->
+  <section class="featured-post-section reveal">
+    <div class="featured-inner">
+      <div class="featured-thumb">
+        <div class="featured-emoji">🏺</div>
+        <div class="featured-tag-badge">Featured</div>
+      </div>
+      <div class="featured-content">
+        <div class="blog-meta-row">
+          <span class="blog-category">Technique</span>
+          <span class="blog-date">March 18, 2025</span>
+          <span class="blog-read-time">⏱ 7 min read</span>
+        </div>
+        <h2 class="featured-title">The Art of Centering: Why It's the Foundation of Everything on the Wheel</h2>
+        <p class="featured-excerpt">Centering clay is the first — and arguably hardest — skill every potter must master. In this deep-dive, our lead instructor Meera walks through the physics, the patience, and the muscle memory behind getting your clay perfectly centered before pulling begins.</p>
+        <div class="featured-author-row">
+          <div class="author-avatar-sm">M</div>
+          <div>
+            <div class="author-name-sm">Meera Krishnan</div>
+            <div class="author-role-sm">Lead Instructor, ClayCraft</div>
+          </div>
+          <a href="blog-detail.html" class="cta-primary" style="margin-left:auto">Read Article →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FILTER TABS ===== -->
+  <div class="filter-section reveal">
+    <div class="filter-inner">
+      <button class="filter-btn active" data-filter="all">All Posts</button>
+      <button class="filter-btn" data-filter="technique">Technique</button>
+      <button class="filter-btn" data-filter="inspiration">Inspiration</button>
+      <button class="filter-btn" data-filter="studio-life">Studio Life</button>
+      <button class="filter-btn" data-filter="beginners">For Beginners</button>
+      <button class="filter-btn" data-filter="events">Events</button>
+    </div>
+  </div>
+
+  <!-- ===== BLOG GRID ===== -->
+  <section class="blog-section">
+    <div class="blog-grid-wrap reveal">
+      <div class="blog-grid">
+
+        <!-- Card 1 -->
+        <article class="blog-card" data-category="beginners">
+          <a href="blog-detail.html" class="blog-card-thumb blog-thumb-1">
+            <span class="blog-card-emoji">🫙</span>
+            <div class="blog-card-overlay"><span>Read More →</span></div>
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-meta-row">
+              <span class="blog-category">For Beginners</span>
+              <span class="blog-date">Feb 28, 2025</span>
+            </div>
+            <h3 class="blog-card-title">Your First Class: What to Expect (and What to Wear)</h3>
+            <p class="blog-card-excerpt">Clay gets everywhere. We promise. Here's our honest guide to showing up, slowing down, and getting your first piece made.</p>
+            <div class="blog-card-footer">
+              <div class="blog-author-mini">
+                <div class="author-dot">S</div>
+                <span>Sana Patel</span>
+              </div>
+              <span class="blog-read-time">5 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="blog-card" data-category="technique">
+          <a href="blog-detail.html" class="blog-card-thumb blog-thumb-2">
+            <span class="blog-card-emoji">🔥</span>
+            <div class="blog-card-overlay"><span>Read More →</span></div>
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-meta-row">
+              <span class="blog-category">Technique</span>
+              <span class="blog-date">Feb 14, 2025</span>
+            </div>
+            <h3 class="blog-card-title">Glaze Chemistry 101: Why Your Colours Look Different After the Kiln</h3>
+            <p class="blog-card-excerpt">Glazing is part art, part science. We explain the chemical reactions that transform your hand-painted piece inside the kiln.</p>
+            <div class="blog-card-footer">
+              <div class="blog-author-mini">
+                <div class="author-dot">A</div>
+                <span>Arjun Nair</span>
+              </div>
+              <span class="blog-read-time">8 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="blog-card" data-category="inspiration">
+          <a href="blog-detail.html" class="blog-card-thumb blog-thumb-3">
+            <span class="blog-card-emoji">🌿</span>
+            <div class="blog-card-overlay"><span>Read More →</span></div>
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-meta-row">
+              <span class="blog-category">Inspiration</span>
+              <span class="blog-date">Jan 30, 2025</span>
+            </div>
+            <h3 class="blog-card-title">How Pottery Became My Therapy — A Student Story</h3>
+            <p class="blog-card-excerpt">Priya came to ClayCraft during a stressful career transition. She stayed for the community, the craft, and the calm.</p>
+            <div class="blog-card-footer">
+              <div class="blog-author-mini">
+                <div class="author-dot">P</div>
+                <span>Priya Mehta</span>
+              </div>
+              <span class="blog-read-time">6 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="blog-card" data-category="studio-life">
+          <a href="blog-detail.html" class="blog-card-thumb blog-thumb-4">
+            <span class="blog-card-emoji">🏛️</span>
+            <div class="blog-card-overlay"><span>Read More →</span></div>
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-meta-row">
+              <span class="blog-category">Studio Life</span>
+              <span class="blog-date">Jan 15, 2025</span>
+            </div>
+            <h3 class="blog-card-title">Behind the Kiln: A Day in the Life at ClayCraft Studio</h3>
+            <p class="blog-card-excerpt">What happens when the students go home? Follow us through a full studio day — from morning prep to the last firing of the night.</p>
+            <div class="blog-card-footer">
+              <div class="blog-author-mini">
+                <div class="author-dot">M</div>
+                <span>Meera Krishnan</span>
+              </div>
+              <span class="blog-read-time">4 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="blog-card" data-category="technique">
+          <a href="blog-detail.html" class="blog-card-thumb blog-thumb-5">
+            <span class="blog-card-emoji">🎨</span>
+            <div class="blog-card-overlay"><span>Read More →</span></div>
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-meta-row">
+              <span class="blog-category">Technique</span>
+              <span class="blog-date">Jan 2, 2025</span>
+            </div>
+            <h3 class="blog-card-title">Hand-Building vs. Wheel Throwing: Which Method Is Right for You?</h3>
+            <p class="blog-card-excerpt">Both approaches create beautiful pieces, but they demand different skills and mindsets. Our guide helps you find your starting point.</p>
+            <div class="blog-card-footer">
+              <div class="blog-author-mini">
+                <div class="author-dot">A</div>
+                <span>Arjun Nair</span>
+              </div>
+              <span class="blog-read-time">6 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="blog-card" data-category="events">
+          <a href="blog-detail.html" class="blog-card-thumb blog-thumb-6">
+            <span class="blog-card-emoji">🎉</span>
+            <div class="blog-card-overlay"><span>Read More →</span></div>
+          </a>
+          <div class="blog-card-body">
+            <div class="blog-meta-row">
+              <span class="blog-category">Events</span>
+              <span class="blog-date">Dec 20, 2024</span>
+            </div>
+            <h3 class="blog-card-title">ClayCraft Year in Review: Our Favourite Moments of 2024</h3>
+            <p class="blog-card-excerpt">From sold-out corporate workshops to surprise student exhibitions, we look back at a year filled with creativity, growth, and great clay.</p>
+            <div class="blog-card-footer">
+              <div class="blog-author-mini">
+                <div class="author-dot">S</div>
+                <span>Studio Team</span>
+              </div>
+              <span class="blog-read-time">5 min read</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="blog-sidebar reveal">
+
+      <!-- Newsletter -->
+      <div class="sidebar-card sidebar-newsletter">
+        <div class="sidebar-newsletter-icon">✉️</div>
+        <h4>Get Studio Updates</h4>
+        <p>New posts, class openings, and pottery tips — straight to your inbox.</p>
+        <input type="email" class="sidebar-input" placeholder="Your email address"/>
+        <button class="cta-primary" style="width:100%;justify-content:center;margin-top:8px">Subscribe →</button>
+      </div>
+
+      <!-- Popular Posts -->
+      <div class="sidebar-card">
+        <h4 class="sidebar-heading">Popular Posts</h4>
+        <div class="popular-posts">
+          <a href="blog-detail.html" class="popular-post-item">
+            <div class="pp-thumb pp-1">🏺</div>
+            <div class="pp-info">
+              <div class="pp-title">The Art of Centering</div>
+              <div class="pp-meta">7 min · Technique</div>
+            </div>
+          </a>
+          <a href="blog-detail.html" class="popular-post-item">
+            <div class="pp-thumb pp-2">🔥</div>
+            <div class="pp-info">
+              <div class="pp-title">Glaze Chemistry 101</div>
+              <div class="pp-meta">8 min · Technique</div>
+            </div>
+          </a>
+          <a href="blog-detail.html" class="popular-post-item">
+            <div class="pp-thumb pp-3">🌿</div>
+            <div class="pp-info">
+              <div class="pp-title">How Pottery Became My Therapy</div>
+              <div class="pp-meta">6 min · Inspiration</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Categories -->
+      <div class="sidebar-card">
+        <h4 class="sidebar-heading">Categories</h4>
+        <div class="category-pills">
+          <a href="#" class="cat-pill">Technique <span>8</span></a>
+          <a href="#" class="cat-pill">For Beginners <span>5</span></a>
+          <a href="#" class="cat-pill">Inspiration <span>7</span></a>
+          <a href="#" class="cat-pill">Studio Life <span>4</span></a>
+          <a href="#" class="cat-pill">Events <span>3</span></a>
+        </div>
+      </div>
+
+    </aside>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../global-js/global.js"></script>
+  <script src="../global-js/navbar.js"></script>
+  <script src="blog.js"></script>
+
+</body>
+</html>

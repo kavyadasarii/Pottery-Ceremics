@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClayCraft — Login & Sign Up</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="auth.css"/>
+</head>
+<body>
+
+<div class="page" id="page">
+
+  
+  <div class="panel">
+    
+    <div class="deco">
+      <div class="deco-blob b1"></div>
+      <div class="deco-blob b2"></div>
+      <div class="deco-blob b3"></div>
+      <div class="pot-illustration">
+        <svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="65" cy="108" rx="32" ry="8" fill="rgba(0,0,0,0.15)"/>
+          <ellipse cx="65" cy="32" rx="28" ry="6" fill="rgba(255,255,255,0.18)"/>
+          <path d="M37 36 C32 50 28 70 34 90 C40 108 90 108 96 90 C102 70 98 50 93 36 Z" fill="rgba(255,255,255,0.22)"/>
+          <path d="M37 36 C32 50 28 70 34 90 C40 108 90 108 96 90 C102 70 98 50 93 36 Z" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <line x1="58" y1="42" x2="54" y2="100" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="72" y1="40" x2="76" y2="100" stroke="rgba(255,255,255,0.10)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="deco-title">Welcome<br>back to <em>ClayCraft</em></div>
+      <div class="deco-sub">Your creative journey continues where you left off.</div>
+      <div class="badge"><span>4.9★</span> from 800+ happy students</div>
+    </div>
+
+    
+    <div class="form-side">
+      <div class="brand">Clay<span>Craft</span></div>
+      <a href="../home-1/home.html" class="back-home">← Back to Home</a>
+      <div class="form-heading">Sign in</div>
+      <div class="form-sub">Good to see you again, potter.</div>
+
+      <form class="form" onsubmit="return false">
+        <div class="field">
+          <label>Email address</label>
+          <input type="email" placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" placeholder="••••••••">
+        </div>
+        <a href="#" class="forgot">Forgot password?</a>
+        <button class="btn-primary">Sign In →</button>
+        <div class="divider">or continue with</div>
+        <button class="btn-google" type="button">
+          <svg width="18" height="18" viewBox="0 0 18 18"><path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" fill="#4285F4"/><path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#34A853"/><path d="M3.964 10.707A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.707V4.961H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.039l3.007-2.332z" fill="#FBBC05"/><path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.961L3.964 7.293C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/></svg>
+          Continue with Google
+        </button>
+        <div class="switch-text">Don't have an account? <a onclick="switchPanel(true)">Create one</a></div>
+      </form>
+    </div>
+  </div>
+
+  
+  <div class="panel">
+    
+    <div class="form-side">
+      <div class="brand">Clay<span>Craft</span></div>
+      <a href="../home-1/home.html" class="back-home">← Back to Home</a>
+      <div class="form-heading">Create account</div>
+      <div class="form-sub">Start your pottery journey today.</div>
+
+      <form class="form" onsubmit="return false">
+        <div class="row-2">
+          <div class="field">
+            <label>First name</label>
+            <input type="text" placeholder="Maya">
+          </div>
+          <div class="field">
+            <label>Last name</label>
+            <input type="text" placeholder="Patel">
+          </div>
+        </div>
+        <div class="field">
+          <label>Email address</label>
+          <input type="email" placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" placeholder="At least 8 characters">
+        </div>
+        <div class="check-row">
+          <input type="checkbox" id="terms">
+          <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+        </div>
+        <button class="btn-primary">Create Account →</button>
+        <div class="divider">or sign up with</div>
+        <button class="btn-google" type="button">
+          <svg width="18" height="18" viewBox="0 0 18 18"><path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z" fill="#4285F4"/><path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#34A853"/><path d="M3.964 10.707A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.707V4.961H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.039l3.007-2.332z" fill="#FBBC05"/><path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.961L3.964 7.293C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/></svg>
+          Continue with Google
+        </button>
+        <div class="switch-text">Already have an account? <a onclick="switchPanel(false)">Sign in</a></div>
+      </form>
+    </div>
+
+    
+    <div class="deco">
+      <div class="deco-blob b1"></div>
+      <div class="deco-blob b2"></div>
+      <div class="deco-blob b3"></div>
+      <div class="pot-illustration">
+        <svg viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+          
+          <ellipse cx="65" cy="108" rx="32" ry="7" fill="rgba(0,0,0,0.15)"/>
+          <path d="M40 38 C36 52 32 72 38 92 C44 108 86 108 92 92 C98 72 94 52 90 38 Z" fill="rgba(255,255,255,0.22)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <ellipse cx="65" cy="34" rx="25" ry="5.5" fill="rgba(255,255,255,0.2)"/>
+          
+          <circle cx="108" cy="44" r="3" fill="rgba(255,255,255,0.4)"/>
+          <circle cx="20" cy="60" r="2" fill="rgba(255,255,255,0.3)"/>
+          <circle cx="112" cy="80" r="2" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="15" cy="90" r="3.5" fill="rgba(255,255,255,0.2)"/>
+        </svg>
+      </div>
+      <div class="deco-title">Join the <em>ClayCraft</em><br>Community</div>
+      <div class="deco-sub">Handcrafted learning, shaped around you since 2014.</div>
+      <div class="badge"><span>10+</span> years of mastery</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function switchPanel(toSignup) {
+    document.getElementById('page').classList.toggle('show-signup', toSignup);
+  }
+</script>
+</body>
+</html>

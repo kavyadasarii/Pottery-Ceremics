@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – ClayCraft Pottery Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../global-css/global.css"/>
+  <link rel="stylesheet" href="../global-css/navbar.css"/>
+  <link rel="stylesheet" href="contact.css"/>
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-inner">
+      <p class="section-eyebrow">Get In Touch</p>
+      <h1 class="page-hero-title">We'd Love to <em>Hear from You</em></h1>
+      <p class="page-hero-sub">Questions about classes, private bookings, corporate events, or just want to say hello — our studio doors (and inboxes) are always open.</p>
+    </div>
+  </section>
+
+  
+  <div class="contact-cards-row reveal">
+    <div class="contact-card">
+      <div class="contact-card-icon">📍</div>
+      <h4>Visit the Studio</h4>
+      <p>12, Pottery Lane, Banjara Hills<br>Hyderabad, Telangana 500034</p>
+      <a href="#map-section" class="contact-card-link">Get Directions →</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">📞</div>
+      <h4>Call Us</h4>
+      <p>+91 98765 43210<br>Mon–Sat, 9am – 7pm</p>
+      <a href="tel:+919876543210" class="contact-card-link">Call Now →</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">✉️</div>
+      <h4>Email Us</h4>
+      <p>hello@claycraft.in<br>We reply within 24 hours</p>
+      <a href="mailto:hello@claycraft.in" class="contact-card-link">Send Email →</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">🕐</div>
+      <h4>Studio Hours</h4>
+      <p>Mon–Fri: 9am – 8pm<br>Sat–Sun: 8am – 6pm</p>
+      <a href="../classes/classes.html" class="contact-card-link">View Classes →</a>
+    </div>
+  </div>
+
+  
+  <section class="contact-main reveal">
+
+    
+    <div class="contact-form-wrap">
+      <p class="section-eyebrow">Send a Message</p>
+      <h2 class="section-title">Drop Us a <em>Note</em></h2>
+      <p class="form-desc">Fill in the form and someone from the ClayCraft team will get back to you within one business day.</p>
+
+      <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" placeholder="e.g. Priya" required/>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" placeholder="e.g. Mehta" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="you@example.com" required/>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number <span class="label-opt">(optional)</span></label>
+          <input type="tel" id="phone" placeholder="+91 98765 43210"/>
+        </div>
+        <div class="form-group">
+          <label for="subject">What's this about?</label>
+          <select id="subject">
+            <option value="" disabled selected>Select a topic</option>
+            <option value="classes">Class Enquiry</option>
+            <option value="private">Private Session</option>
+            <option value="corporate">Corporate Event</option>
+            <option value="birthday">Birthday Party</option>
+            <option value="gift">Gift Vouchers</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" rows="5" placeholder="Tell us what you have in mind..." required></textarea>
+        </div>
+        <button type="submit" class="cta-primary form-submit-btn">
+          <span class="btn-text">Send Message →</span>
+          <span class="btn-loading" style="display:none">Sending…</span>
+        </button>
+      </form>
+
+      
+      <div class="form-success" id="formSuccess" style="display:none">
+        <div class="form-success-icon">🎉</div>
+        <h3>Message Sent!</h3>
+        <p>Thanks for reaching out. We'll get back to you within one business day.</p>
+        <button class="cta-outline" onclick="resetForm()">Send Another Message</button>
+      </div>
+    </div>
+
+    
+    <div class="contact-side">
+      <div class="contact-side-card">
+        <p class="section-eyebrow">Follow Along</p>
+        <h3 class="contact-side-title">Find Us on <em>Social</em></h3>
+        <div class="social-links">
+          <a href="#" class="social-item">
+            <div class="social-icon social-ig">📸</div>
+            <div>
+              <div class="social-name">Instagram</div>
+              <div class="social-handle">@claycraft.hyd</div>
+            </div>
+          </a>
+          <a href="#" class="social-item">
+            <div class="social-icon social-fb">💬</div>
+            <div>
+              <div class="social-name">Facebook</div>
+              <div class="social-handle">ClayCraft Studio</div>
+            </div>
+          </a>
+          <a href="#" class="social-item">
+            <div class="social-icon social-yt">▶️</div>
+            <div>
+              <div class="social-name">YouTube</div>
+              <div class="social-handle">ClayCraft Tutorials</div>
+            </div>
+          </a>
+          <a href="#" class="social-item">
+            <div class="social-icon social-wa">📱</div>
+            <div>
+              <div class="social-name">WhatsApp</div>
+              <div class="social-handle">Chat with us directly</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-side-card faq-card">
+        <p class="section-eyebrow">Quick Answers</p>
+        <h3 class="contact-side-title">Common <em>Questions</em></h3>
+        <div class="faq-list">
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">Do I need to book in advance? <span class="faq-arrow">▾</span></div>
+            <div class="faq-a">Yes, we recommend booking at least 2 days ahead as classes fill up quickly, especially on weekends.</div>
+          </div>
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">What should I wear? <span class="faq-arrow">▾</span></div>
+            <div class="faq-a">Wear clothes you don't mind getting clay on — it will happen! We provide aprons but clay has a way of going everywhere.</div>
+          </div>
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">Do you offer gift vouchers? <span class="faq-arrow">▾</span></div>
+            <div class="faq-a">Yes! Gift vouchers are available for any class or in fixed amounts. Email us or call to arrange one.</div>
+          </div>
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">Can children attend? <span class="faq-arrow">▾</span></div>
+            <div class="faq-a">Absolutely — we have dedicated Kids Workshop sessions for ages 6 and up. Adults are also welcome to join alongside their children.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="map-section reveal" id="map-section">
+    <div class="map-header">
+      <div class="map-header-inner">
+        <p class="section-eyebrow">Find Us</p>
+        <h2 class="section-title">We're in <em>Banjara Hills</em></h2>
+        <p class="map-address">12, Pottery Lane, Banjara Hills, Hyderabad, Telangana 500034</p>
+      </div>
+      <a href="https://maps.google.com/?q=Banjara+Hills+Hyderabad" target="_blank" class="cta-outline">Open in Google Maps →</a>
+    </div>
+    <div class="map-embed-wrap">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60884.81193196698!2d78.39752857431642!3d17.42539399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb972b6bbbbbbb%3A0x7a6b5fc3a0f1c0d7!2sBanjara%20Hills%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade" title="ClayCraft Studio Location">
+      </iframe>
+      <div class="map-pin-card">
+        <div class="map-pin-icon">🏺</div>
+        <div>
+          <div class="map-pin-title">ClayCraft Studio</div>
+          <div class="map-pin-addr">12, Pottery Lane, Banjara Hills</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <div class="cta-banner reveal">
+    <div class="cta-banner-inner">
+      <div class="cta-banner-text">
+        <h2>Ready to Shape Something Beautiful?</h2>
+        <p>Join hundreds of students discovering the joy of handmade craft every week.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a href="../classes/classes.html" class="cta-primary">Book a Class →</a>
+        <a href="../auth/login.html" class="cta-outline" style="background:rgba(255,255,255,0.6)">Sign In</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../global-js/global.js"></script>
+  <script src="../global-js/navbar.js"></script>
+  <script src="contact.js"></script>
+</body>
+</html>
