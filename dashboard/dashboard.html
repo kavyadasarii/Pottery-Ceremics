@@ -575,7 +575,6 @@ function showSection(name){
   document.getElementById('pageTitle').textContent    = t[0];
   document.getElementById('pageSubtitle').textContent = t[1];
 
-  // Highlight nav
   document.querySelectorAll('.nav-item').forEach(ni=>{
     if(ni.getAttribute('onclick')===`showSection('${name}')`)
       ni.classList.add('active');

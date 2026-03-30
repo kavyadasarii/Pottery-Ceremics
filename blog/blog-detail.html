@@ -287,6 +287,7 @@
   <div id="footer-placeholder"></div>
 
   
+  <script src="../global-js/navbar.js"></script>
   <script src="../global-js/global.js"></script>
   <script src="blog.js"></script>
   <script>
@@ -297,8 +298,6 @@
         setTimeout(() => btn.textContent = '🔗 Copy Link', 2000);
       });
     }
-
-    // Active TOC highlighting
     const tocLinks = document.querySelectorAll('.toc-link');
     const sections = document.querySelectorAll('article section[id]');
     const observer = new IntersectionObserver((entries) => {

@@ -10,11 +10,11 @@
 
 body.dark-mode {
   --bg-color:   #1a1410;
-  --text-color: #f0ece8;
+  --text-color: #E8EAF0;
   --primary:    #D6A77A;
   --secondary:  #8B5E3C;
   --card-bg:    #252018;
-  --muted:      #b09a88;
+  --muted:      #A8AEBB;
   --border:     rgba(214, 167, 122, 0.16);
 }
 
@@ -38,9 +38,10 @@ body {
   color: var(--text-color);
   font-family: 'DM Sans', 'Poppins', sans-serif;
   line-height: 1.6;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow-x: hidden;
   padding-top: 56px; 
+}
 
 
 .footer {
@@ -48,6 +49,7 @@ body {
   padding: 60px 40px 20px;
   margin-top: 50px;
   border-top: 1px solid var(--border);
+  transition: background 0.4s ease, border-color 0.4s ease;
 }
 .footer-container {
   max-width: 1280px;

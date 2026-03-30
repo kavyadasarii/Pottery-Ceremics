@@ -322,11 +322,12 @@
   position: absolute;
   bottom: -20px;
   left: 20px;
-  backdrop-filter: blur(10px);
-  background: rgba(255,255,255,0.8);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 18px 22px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  transition: background 0.4s ease, border-color 0.4s ease;
 }
 .about-accent-card .num {
   font-family:'Playfair Display',serif;
@@ -408,7 +409,7 @@
   top: 16px; right: 20px;
   font-family: 'Playfair Display', serif;
   font-size: 3rem; font-weight: 900;
-  color: var(--primary); opacity: 0.08; line-height: 1;
+  color: var(--primary); opacity: 0.35; line-height: 1;
 }
 .process-icon {
   width: 52px; height: 52px;

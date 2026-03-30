@@ -1,21 +1,3 @@
-async function loadComponent(id, path) {
-  try {
-    const res = await fetch(path);
-    const html = await res.text();
-    document.getElementById(id).innerHTML = html;
-  } catch (e) {
-    console.warn(`Could not load component: ${path}`, e);
-  }
-}
-
-Promise.all([
-  loadComponent('navbar-placeholder', '../components/navbar.html'),
-  loadComponent('footer-placeholder', '../components/footer.html')
-]).then(() => {
-  if (typeof initNavbar === 'function') initNavbar();
-  initReveal();
-});
-
 function initReveal() {
   const reveals = document.querySelectorAll('.reveal2');
   const io = new IntersectionObserver((entries) => {

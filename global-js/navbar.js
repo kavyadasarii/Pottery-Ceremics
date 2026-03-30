@@ -56,7 +56,14 @@ function initNavbar() {
 
   function applyTheme(dark) {
     document.body.classList.toggle('dark-mode', dark);
-    themeToggles.forEach((b) => (b.textContent = dark ? '☀️' : '🌙'));
+    
+    themeToggles.forEach((b) => {
+      b.classList.remove('theme-toggle-anim');
+      void b.offsetWidth; // Force reflow to restart animation
+      b.textContent = dark ? '☀️' : '🌙';
+      b.classList.add('theme-toggle-anim');
+    });
+
     localStorage.setItem('theme', dark ? 'dark' : 'light');
     isDark = dark;
   }

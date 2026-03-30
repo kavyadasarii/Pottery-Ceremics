@@ -63,17 +63,77 @@ async function loadComponent(selector, url) {
   const el = document.querySelector(selector);
   if (!el) return;
   try {
-    const res  = await fetch(url);
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const html = await res.text();
     el.innerHTML = html;
+    
+    fixComponentLinks(el);
   } catch (err) {
     console.error('loadComponent failed:', url, err);
   }
 }
 
 
+function getRelativePrefix() {
+
+  const path = window.location.pathname;
+  
+  const subfolders = ['about', 'blog', 'contact', 'dashboard', 'home-1', 'home-2', 'login', 'services'];
+  const currentFolder = path.split('/').filter(p => p).slice(-2, -1)[0];
+  
+  if (subfolders.includes(currentFolder)) {
+    return '../';
+  }
+  
+  return './';
+}
+
+function fixComponentLinks(container) {
+  const prefix = getRelativePrefix();
+  const links = container.querySelectorAll('a[href]');
+  
+  links.forEach(link => {
+    let href = link.getAttribute('href');
+    
+    if (href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+      return;
+    }
+    
+    if (href.startsWith('/')) {
+      href = href.substring(1);
+    }
+    
+    link.href = prefix + href;
+  });
+}
+
+function getComponentPath(fileName) {
+  return getRelativePrefix() + `components/${fileName}`;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  initReveal();
-  initHeroBg();
-  initServicesFilter();
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+
+  fixComponentLinks(document.body);
+
+  const navPlaceholder = document.getElementById('navbar-placeholder');
+  const footPlaceholder = document.getElementById('footer-placeholder');
+
+  const promises = [];
+  if (navPlaceholder) {
+    promises.push(loadComponent('#navbar-placeholder', getComponentPath('navbar.html')));
+  }
+  if (footPlaceholder) {
+    promises.push(loadComponent('#footer-placeholder', getComponentPath('footer.html')));
+  }
+
+  Promise.all(promises).then(() => {
+    if (typeof initNavbar === 'function') initNavbar();
+    initReveal();
+    initHeroBg();
+    initServicesFilter();
+  });
 });
