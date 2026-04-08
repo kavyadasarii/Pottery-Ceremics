@@ -847,7 +847,6 @@
   transform: none;
 }
 
-/* ===== DARK MODE: STATS SECTION ===== */
 body.dark-mode .stats-banner-inner {
   background: linear-gradient(135deg, #1a120b 0%, #2a1b10 100%);
   border: 1px solid rgba(232, 169, 106, 0.12);
@@ -870,7 +869,6 @@ body.dark-mode .stat-big + .stat-big {
   border-left: 1px solid rgba(232, 169, 106, 0.12);
 }
 
-/* ===== DARK MODE: CTA SECTION ===== */
 body.dark-mode .cta-inner {
   background: linear-gradient(135deg, #1a120b, #2b1d12 80%);
   border: 1px solid rgba(232, 169, 106, 0.12);
@@ -889,7 +887,6 @@ body.dark-mode .cta-inner p {
   color: rgba(255, 240, 220, 0.65);
 }
 
-/* buttons fix */
 body.dark-mode .cta-outline {
   border-color: #e8a96a;
   color: #e8a96a;
