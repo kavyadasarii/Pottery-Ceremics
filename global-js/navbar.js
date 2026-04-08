@@ -33,6 +33,7 @@ function initNavbar() {
     if (e.key === 'Escape') toggleDrawer(false);
   });
 
+  // ── Mobile accordion ──
   document.querySelectorAll('.mob-acc-toggle').forEach((btn) => {
     btn.addEventListener('click', () => {
       const targetId = btn.dataset.target;
@@ -56,14 +57,12 @@ function initNavbar() {
 
   function applyTheme(dark) {
     document.body.classList.toggle('dark-mode', dark);
-    
     themeToggles.forEach((b) => {
       b.classList.remove('theme-toggle-anim');
-      void b.offsetWidth; // Force reflow to restart animation
+      void b.offsetWidth;
       b.textContent = dark ? '☀️' : '🌙';
       b.classList.add('theme-toggle-anim');
     });
-
     localStorage.setItem('theme', dark ? 'dark' : 'light');
     isDark = dark;
   }
@@ -72,5 +71,30 @@ function initNavbar() {
 
   themeToggles.forEach((btn) => {
     btn.addEventListener('click', () => applyTheme(!isDark));
+  });
+
+  const rtlToggles = document.querySelectorAll('.rtl-btn');
+  let isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+
+  function applyRTL(rtl) {
+    document.documentElement.setAttribute('dir', rtl ? 'rtl' : 'ltr');
+    rtlToggles.forEach((b) => {
+      b.classList.remove('theme-toggle-anim');
+      void b.offsetWidth;
+      b.textContent = rtl ? 'LTR' : 'RTL';
+      b.classList.add('theme-toggle-anim');
+    });
+    localStorage.setItem('dir', rtl ? 'rtl' : 'ltr');
+    isRTL = rtl;
+  }
+
+  if (localStorage.getItem('dir') === 'rtl') {
+    applyRTL(true);
+  } else {
+    applyRTL(false);
+  }
+
+  rtlToggles.forEach((btn) => {
+    btn.addEventListener('click', () => applyRTL(!isRTL));
   });
 }

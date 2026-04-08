@@ -591,3 +591,37 @@
   .about-strip { padding: 0 20px; }
   .cta-banner { padding: 0 20px; }
 }
+/* 🌙 DARK MODE CTA FIX */
+body.dark-mode .cta-banner-inner {
+  background: linear-gradient(135deg, #1c140d, #2b1d12 80%);
+  border: 1px solid rgba(232, 169, 106, 0.15);
+  box-shadow: 0 12px 50px rgba(0,0,0,0.6);
+}
+
+body.dark-mode .cta-banner-inner::after {
+  opacity: 0.05; /* subtle decorative emoji */
+}
+
+body.dark-mode .cta-banner-text h2 {
+  color: #f5e6d3; /* warm light text */
+}
+
+body.dark-mode .cta-banner-text p {
+  color: rgba(245, 230, 211, 0.7);
+}
+
+/* Buttons */
+body.dark-mode .cta-outline {
+  border-color: #e8a96a;
+  color: #e8a96a;
+  background: transparent !important;
+}
+
+body.dark-mode .cta-outline:hover {
+  background: #e8a96a;
+  color: #1c140d;
+}
+
+body.dark-mode .cta-primary {
+  box-shadow: 0 6px 30px rgba(232,169,106,0.25);
+}
