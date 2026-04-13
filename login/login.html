@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ClayCraft – Sign Up</title>
+  <title>ClayCraft – Login</title>
   <link rel="stylesheet" href="auth.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 </head>
@@ -14,8 +14,8 @@
     <div class="highlights-panel">
       <div class="highlights-inner">
         <div class="badge">🏺 Handcrafted with love since 2014</div>
-        <h1 class="panel-heading">Begin Your<br/><em>Clay Journey</em></h1>
-        <p class="panel-sub">Join thousands of pottery lovers. From beginner wheel-throwing sessions to advanced ceramics — every piece tells a story shaped by your hands.</p>
+        <h1 class="panel-heading">Shape Your World<br/><em>With Clay &amp; Soul</em></h1>
+        <p class="panel-sub">Discover the joy of handmade pottery. From beginner wheel-throwing sessions to advanced ceramics — every piece tells a story shaped by your hands.</p>
         <div class="stats-row">
           <div class="stat-card">
             <span class="stat-num">10+</span>
@@ -57,27 +57,10 @@
           </a>
         </div>
 
-        <h2 class="card-title">Create Account</h2>
-        <p class="card-subtitle">Start shaping your pottery story today</p>
+        <h2 class="card-title">Welcome Back</h2>
+        <p class="card-subtitle">Sign in to continue your pottery journey</p>
 
         <form class="auth-form" onsubmit="return false">
-          <div class="fields-row">
-            <div class="field-group">
-              <label for="fname">First Name</label>
-              <div class="input-wrap">
-                <svg class="input-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M3 17c0-3.314 3.134-6 7-6s7 2.686 7 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                <input type="text" id="fname" placeholder="Emma" autocomplete="given-name"/>
-              </div>
-            </div>
-            <div class="field-group">
-              <label for="lname">Last Name</label>
-              <div class="input-wrap">
-                <svg class="input-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M3 17c0-3.314 3.134-6 7-6s7 2.686 7 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-                <input type="text" id="lname" placeholder="Clarke" autocomplete="family-name"/>
-              </div>
-            </div>
-          </div>
-
           <div class="field-group">
             <label for="email">Email Address</label>
             <div class="input-wrap">
@@ -90,27 +73,16 @@
             <label for="password">Password</label>
             <div class="input-wrap">
               <svg class="input-icon" viewBox="0 0 20 20" fill="none"><rect x="4" y="9" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M7 9V6.5a3 3 0 016 0V9" stroke="currentColor" stroke-width="1.4"/></svg>
-              <input type="password" id="password" placeholder="Create a strong password" autocomplete="new-password"/>
+              <input type="password" id="password" placeholder="••••••••" autocomplete="current-password"/>
               <button type="button" class="eye-btn" onclick="togglePassword('password', this)" aria-label="Toggle password visibility">
                 <svg class="eye-icon eye-closed" viewBox="0 0 20 20" fill="none"><path d="M2 10s3-5.5 8-5.5S18 10 18 10s-3 5.5-8 5.5S2 10 2 10z" stroke="currentColor" stroke-width="1.4"/><circle cx="10" cy="10" r="2.5" stroke="currentColor" stroke-width="1.4"/></svg>
                 <svg class="eye-icon eye-open hidden" viewBox="0 0 20 20" fill="none"><path d="M2 10s3-5.5 8-5.5S18 10 18 10s-3 5.5-8 5.5S2 10 2 10z" stroke="currentColor" stroke-width="1.4"/><line x1="3" y1="3" x2="17" y2="17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
               </button>
             </div>
+            <a href="#" class="forgot-link">Forgot password?</a>
           </div>
 
-          <div class="field-group">
-            <label for="confirm-password">Confirm Password</label>
-            <div class="input-wrap">
-              <svg class="input-icon" viewBox="0 0 20 20" fill="none"><rect x="4" y="9" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M7 9V6.5a3 3 0 016 0V9" stroke="currentColor" stroke-width="1.4"/></svg>
-              <input type="password" id="confirm-password" placeholder="Repeat your password" autocomplete="new-password"/>
-              <button type="button" class="eye-btn" onclick="togglePassword('confirm-password', this)" aria-label="Toggle confirm password visibility">
-                <svg class="eye-icon eye-closed" viewBox="0 0 20 20" fill="none"><path d="M2 10s3-5.5 8-5.5S18 10 18 10s-3 5.5-8 5.5S2 10 2 10z" stroke="currentColor" stroke-width="1.4"/><circle cx="10" cy="10" r="2.5" stroke="currentColor" stroke-width="1.4"/></svg>
-                <svg class="eye-icon eye-open hidden" viewBox="0 0 20 20" fill="none"><path d="M2 10s3-5.5 8-5.5S18 10 18 10s-3 5.5-8 5.5S2 10 2 10z" stroke="currentColor" stroke-width="1.4"/><line x1="3" y1="3" x2="17" y2="17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-              </button>
-            </div>
-          </div>
-
-          <button type="submit" class="btn-primary">Create Account →</button>
+          <button type="submit" class="btn-primary">Sign In →</button>
 
           <div class="divider"><span>or</span></div>
 
@@ -119,7 +91,7 @@
             Continue with Google
           </button>
 
-          <p class="switch-auth">Already have an account? <a href="login.html">Sign in</a></p>
+          <p class="switch-auth">Don't have an account? <a href="signup.html">Create one</a></p>
         </form>
 
       </div>

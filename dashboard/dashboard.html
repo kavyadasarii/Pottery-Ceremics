@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>ClayCraft — Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="dasgboard.css"/>
+<link rel="stylesheet" href="dashboard.css"/>
 </head>
 <body>
 
@@ -20,7 +20,7 @@
     
     <div class="sidebar-brand">
       <div class="brand-icon">🏺</div>
-      <div class="brand-text"><span>Clay</span>Craft</div>
+      <div class="brand-text">Clay<span>Craft</span></div>
     </div>
 
     
@@ -104,10 +104,8 @@
 
     
     <header class="topbar">
-      <button class="icon-btn" id="mobMenuBtn" onclick="openMobileMenu()" style="display:none">☰</button>
+      <button class="mob-menu-btn" id="mobMenuBtn" onclick="openMobileMenu()" aria-label="Open menu">☰</button>
       <div class="topbar-left">
-        <div class="page-title" id="pageTitle">Admin Dashboard</div>
-        <div class="page-subtitle" id="pageSubtitle">Welcome back — here's what's happening at ClayCraft today.</div>
       </div>
       <div class="topbar-right">
         <div class="search-bar">
@@ -598,10 +596,7 @@ function closeMobileMenu(){
 }
 
 
-if(window.innerWidth<=768){
-  document.getElementById('mobMenuBtn').style.display='flex';
-  document.getElementById('sidebarToggle').style.display='none';
-}
+
 
 
 let dark = localStorage.getItem('cc-dark')==='1';
