@@ -98,3 +98,74 @@ function initNavbar() {
     btn.addEventListener('click', () => applyRTL(!isRTL));
   });
 }
+(function () {
+  function normalize(path) {
+    try {
+      var url = new URL(path, window.location.origin);
+      var p = url.pathname.replace(/\/+$/, '');
+      return p === '' ? '/' : p;
+    } catch (e) {
+      return path;
+    }
+  }
+ 
+  var currentPath = normalize(window.location.pathname);
+  var homeGroup = ['/home-1/home.html', '/home-2/home2.html'];
+ 
+  function setActiveStates(selector, activeClass) {
+    document.querySelectorAll(selector).forEach(function (link) {
+      var href = link.getAttribute('href');
+      if (!href || href === '#') return;
+      var linkPath = normalize(href);
+      if (linkPath === currentPath) {
+        link.classList.add(activeClass);
+      } else {
+        link.classList.remove(activeClass);
+      }
+    });
+  }
+ 
+  function applyActiveStates() {
+    setActiveStates('.nav-links > .nav-item > .nav-link', 'active');
+    setActiveStates('.dropdown-menu a', 'active');
+    setActiveStates('.mob-link', 'active');
+    setActiveStates('.mob-acc-body a', 'active');
+ 
+    if (homeGroup.indexOf(currentPath) !== -1) {
+      var homeTopLink = document.querySelector('.nav-links > .nav-item.dropdown > .nav-link');
+      if (homeTopLink) homeTopLink.classList.add('active');
+      var mobHomeToggle = document.querySelector('.mob-acc-toggle[data-target="mob-home"]');
+      if (mobHomeToggle) mobHomeToggle.classList.add('active');
+    }
+  }
+ 
+  // The navbar may be injected asynchronously (fetch + innerHTML) after this
+  // script runs, so wait for it to actually exist in the DOM before applying
+  // active states. If it's already there, this resolves on the first check.
+  function whenNavbarReady(callback) {
+    if (document.querySelector('.navbar')) {
+      callback();
+      return;
+    }
+    var observer = new MutationObserver(function () {
+      if (document.querySelector('.navbar')) {
+        observer.disconnect();
+        callback();
+      }
+    });
+    observer.observe(document.body || document.documentElement, {
+      childList: true,
+      subtree: true
+    });
+  }
+ 
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+      whenNavbarReady(applyActiveStates);
+    });
+  } else {
+    whenNavbarReady(applyActiveStates);
+  }
+})();
+ 
+

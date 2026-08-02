@@ -122,52 +122,23 @@
     justify-content: center;
     align-items: center;
     background: none;
-    animation: floatY 6s ease-in-out infinite;
 }
 
-/* Slow-spinning decorative orbit behind the framed image */
-.hero-orbit{
-    position: absolute;
-    width: 440px;
-    height: 440px;
-    border-radius: 50%;
-    border: 1.5px dashed rgba(139,94,60,0.3);
-    animation: spin 30s linear infinite;
-    pointer-events: none;
-}
-.hero-orbit::before,
-.hero-orbit::after{
-    content: '';
-    position: absolute;
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    background: var(--primary);
-}
-.hero-orbit::before{ top: -5px; left: 50%; transform: translateX(-50%); }
-.hero-orbit::after{ bottom: -5px; left: 50%; transform: translateX(-50%); background: var(--secondary); }
-
-/* Framed hero image: soft asymmetric shape with a gradient border */
-.hero-img-frame{
-    position: relative;
-    width: 340px;
-    height: 420px;
-    border-radius: 28px 28px 28px 110px;
+.hero-image-card{
+    width: 380px;
+    height: 380px;
+     border-radius: 32px;
     overflow: hidden;
-    border: 6px solid transparent;
-    background:
-        linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
-        linear-gradient(135deg, var(--primary), var(--secondary)) border-box;
+    background: #1b1512;
+    border: 1px solid rgba(255,255,255,.08);
     box-shadow:
-        0 30px 70px rgba(0,0,0,.28),
-        0 0 90px rgba(201,134,84,.15);
-    transition: transform .4s ease, box-shadow .4s ease;
+        0 25px 70px rgba(0,0,0,.35),
+        0 0 80px rgba(201,134,84,.12);
+    transition: transform .35s ease;
 }
 
-.hero-img-frame:hover{
-    transform: translateY(-8px) rotate(-1deg);
-    box-shadow:
-        0 40px 90px rgba(0,0,0,.32),
-        0 0 100px rgba(201,134,84,.22);
+.hero-image-card:hover{
+    transform: translateY(-6px);
 }
 
 .hero-pottery-image{
@@ -175,13 +146,6 @@
     height: 100%;
     object-fit: cover;
     object-position: center top;
-    border-radius: 22px 22px 22px 90px;
-    display: block;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
 }
 .hero-ring-badge {
   position: absolute;
@@ -310,9 +274,6 @@
 }
 .cta-outline:hover { background: var(--primary); color: #fff; }
 
-/* Modifier for outline buttons sitting on a colored banner (replaces old inline style) */
-.cta-outline-light { background: rgba(255,255,255,0.6); }
-
 
 .about-strip {
   max-width: 1280px;
@@ -406,34 +367,16 @@
 .class-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(139,94,60,0.16); }
 .class-thumb {
   height: 200px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4.5rem;
   position: relative;
-  overflow: hidden;
 }
-/* Kept as a fallback tint behind the image (shows while loading / if image is missing) */
 .class-thumb-1 { background: linear-gradient(135deg, #f0dcc5, #d4956a); }
 .class-thumb-2 { background: linear-gradient(135deg, #cde3d5, #7aac8f); }
 .class-thumb-3 { background: linear-gradient(135deg, #d5cff0, #8a7abf); }
-
-.class-thumb-img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform .45s ease;
-}
-.class-card:hover .class-thumb-img{ transform: scale(1.08); }
-
-.class-thumb::after{
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(160deg, rgba(139,94,60,0.35), rgba(0,0,0,0.15));
-  pointer-events: none;
-}
 .class-tag {
   position: absolute;
   top: 14px; left: 14px;
-  z-index: 1;
   background: rgba(255,255,255,0.92);
   backdrop-filter: blur(6px);
   font-size: 0.73rem; font-weight: 700;
@@ -454,115 +397,46 @@
 .class-meta-info span { display: flex; align-items: center; gap: 4px; }
 .class-price { font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:700; color:var(--primary); }
 
+
 .process-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
+  gap: 24px;
   margin-top: 48px;
-  position: relative;
+  counter-reset: steps;
 }
-
-/* Dashed flow line connecting the steps (desktop only) */
-.process-grid::before {
-  content: '';
-  position: absolute;
-  top: 90px;
-  left: calc(12.5% + 20px);
-  right: calc(12.5% + 20px);
-  height: 2px;
-  background-image: linear-gradient(to right, rgba(139,94,60,0.35) 60%, transparent 0%);
-  background-size: 14px 2px;
-  background-repeat: repeat-x;
-  z-index: 0;
-}
-
 .process-card {
   background: var(--card-bg);
-  border-radius: 22px;
-  overflow: hidden;
+  border-radius: 20px;
+  padding: 32px 24px;
   border: 1px solid rgba(139,94,60,0.12);
-  box-shadow: 0 8px 30px rgba(139,94,60,0.08);
   position: relative;
-  z-index: 1;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-.process-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 24px 55px rgba(139,94,60,0.18);
-}
-
-/* Arrow between cards, desktop 4-col layout only */
-.process-card:not(:last-child)::after {
-  content: '→';
-  position: absolute;
-  top: 70px;
-  right: -26px;
-  font-size: 1.3rem;
-  color: var(--primary);
-  z-index: 2;
-}
-
-.process-media {
-  position: relative;
-  height: 180px;
   overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-.process-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s ease;
-}
-.process-card:hover .process-img { transform: scale(1.08); }
-
-.process-media::after {
-  content: '';
+.process-card:hover { transform: translateY(-4px); box-shadow: 0 8px 40px rgba(139,94,60,0.12); }
+.process-card::before {
+  counter-increment: steps;
+  content: "0" counter(steps);
   position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,0.55) 100%);
+  top: 16px; right: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem; font-weight: 900;
+  color: var(--primary); opacity: 0.35; line-height: 1;
 }
-
-.process-num {
-  position: absolute;
-  top: 14px; left: 14px;
-  z-index: 2;
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #fff;
+.process-icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(139,94,60,0.12), rgba(192,125,69,0.2));
   display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; margin-bottom: 20px;
+}
+.process-card h4 {
   font-family: 'Playfair Display', serif;
-  font-weight: 900;
-  font-size: 0.95rem;
-  box-shadow: 0 6px 18px rgba(139,94,60,0.35);
-  border: 2px solid rgba(255,255,255,0.5);
+  font-size: 1.05rem; font-weight: 700;
+  margin-bottom: 8px; color: var(--text-color);
 }
-
-.process-content {
-  padding: 22px 24px 28px;
-}
-.process-content h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.08rem;
-  font-weight: 700;
-  color: var(--text-color);
-  margin-bottom: 8px;
-}
-.process-content p {
-  font-size: 0.87rem;
-  color: var(--muted);
-  line-height: 1.65;
-}
-
-@media (max-width: 1024px) {
-  .process-grid { grid-template-columns: 1fr 1fr; }
-  .process-grid::before,
-  .process-card::after { display: none; }
-}
-@media (max-width: 768px) {
-  .process-grid { grid-template-columns: 1fr; }
-}
+.process-card p { font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -753,19 +627,12 @@ body.dark-mode .cta-banner-text p {
 body.dark-mode .cta-outline {
   border-color: #e8a96a;
   color: #e8a96a;
-  background: transparent;
+  background: transparent !important;
 }
 
-/* Higher specificity than the base rule above, so hover reliably wins
-   (the old "!important" on the base rule was blocking this) */
 body.dark-mode .cta-outline:hover {
   background: #e8a96a;
   color: #1c140d;
-  border-color: #e8a96a;
-}
-
-body.dark-mode .cta-primary:hover {
-  box-shadow: 0 10px 34px rgba(232,169,106,0.4);
 }
 
 body.dark-mode .cta-primary {
