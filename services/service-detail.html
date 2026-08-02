@@ -26,7 +26,7 @@
       <div class="detail-hero-left">
         
         <div class="detail-breadcrumb">
-          <a href="/home-1/home.html">Home</a>
+          <a href="../home/home.html">Home</a>
           <span class="bc-sep">›</span>
           <a href="services.html">Services</a>
           <span class="bc-sep">›</span>
@@ -56,20 +56,19 @@
             <span class="detail-price" id="detail-price">₹1,200</span>
             <span class="detail-price-per" id="detail-price-per">/ session</span>
           </div>
-          <a href="/services/service-detail.html" class="cta-primary">Book This Service →</a>
-          <a href="/contact/contact.html" class="cta-outline">Enquire</a>
+          <a href="../contact/contact.html" class="cta-primary">Book This Service →</a>
+          <a href="../contact/contact.html" class="cta-outline">Enquire</a>
         </div>
 
         <div class="detail-rating-row">
           <div class="detail-stars">★★★★★</div>
-          <span class="detail-rating-text">4.9 / 5 from <strong>230+ reviews</strong></span>
+          <span class="detail-rating-text" id="detail-rating-text">4.9 / 5 from <strong>230+ reviews</strong></span>
         </div>
       </div>
 
       
       <div class="detail-hero-right">
         <div class="detail-visual-card" id="detail-visual-card">
-          <div class="detail-visual-emoji" id="detail-visual-emoji">🏺</div>
           <div class="detail-visual-glow"></div>
         </div>
         <div class="detail-side-badge detail-side-badge-1">
@@ -80,10 +79,10 @@
           </div>
         </div>
         <div class="detail-side-badge detail-side-badge-2">
-          <span class="side-badge-icon">🛍️</span>
+          <span class="side-badge-icon" id="side-badge-icon-2">🛍️</span>
           <div>
-            <strong>Take It Home</strong>
-            <span>Keep everything you make</span>
+            <strong id="side-badge-title-2">Take It Home</strong>
+            <span id="side-badge-sub-2">Keep everything you make</span>
           </div>
         </div>
       </div>
@@ -91,10 +90,17 @@
   </section>
 
   
+  <div class="gallery-strip reveal">
+    <div class="gallery-strip-inner" id="gallery-strip">
+      
+    </div>
+  </div>
+
+  
   <div class="detail-tabs-bar reveal">
     <div class="detail-tabs-inner">
       <button class="dtab active" data-tab="overview">Overview</button>
-      <button class="dtab" data-tab="curriculum">What You'll Learn</button>
+      <button class="dtab" data-tab="curriculum" id="tab-btn-curriculum">Highlights</button>
       <button class="dtab" data-tab="includes">What's Included</button>
       <button class="dtab" data-tab="reviews">Reviews</button>
     </div>
@@ -111,33 +117,14 @@
         <div class="tab-panel active" id="tab-overview">
           <div class="content-block">
             <h2 class="content-h2">About This <em>Service</em></h2>
-            <p class="content-p" id="service-about-1">Whether you've never touched clay before or want to revisit the basics, our Beginner Pottery class is the perfect starting point. Over 2 guided hours, you'll learn the fundamentals of hand-building techniques and leave with a piece you've made entirely from scratch.</p>
-            <p class="content-p" id="service-about-2">Our instructors create a relaxed, supportive atmosphere — mistakes are part of the process, and every "imperfect" piece has its own charm. Many of our most advanced students started right here.</p>
+            <p class="content-p" id="service-about-1">Loading…</p>
+            <p class="content-p" id="service-about-2"></p>
           </div>
 
           <div class="content-block">
             <h2 class="content-h2">The <em>Experience</em></h2>
-            <div class="process-grid-detail">
-              <div class="process-card-detail">
-                <div class="process-icon-detail">📋</div>
-                <h4>Arrive &amp; Settle</h4>
-                <p>Get your apron, meet your instructor, and get introduced to the clay and tools available.</p>
-              </div>
-              <div class="process-card-detail">
-                <div class="process-icon-detail">👐</div>
-                <h4>Learn &amp; Create</h4>
-                <p>Follow guided exercises, then freestyle your own piece with hands-on instructor support.</p>
-              </div>
-              <div class="process-card-detail">
-                <div class="process-icon-detail">🔥</div>
-                <h4>We Handle the Rest</h4>
-                <p>Your piece dries, gets bisque fired, glazed, and kiln fired — all in our on-site studio.</p>
-              </div>
-              <div class="process-card-detail">
-                <div class="process-icon-detail">🎁</div>
-                <h4>Collect Your Piece</h4>
-                <p>Come back in 10–14 days to collect a fully finished, glaze-fired piece that is entirely yours.</p>
-              </div>
+            <div class="process-grid-detail" id="experience-grid">
+              
             </div>
           </div>
 
@@ -155,51 +142,10 @@
         
         <div class="tab-panel" id="tab-curriculum">
           <div class="content-block">
-            <h2 class="content-h2">What You'll <em>Learn</em></h2>
-            <p class="content-p">A structured but flexible curriculum designed to build genuine skills, not just produce a souvenir.</p>
+            <h2 class="content-h2" id="curriculum-heading">Service <em>Highlights</em></h2>
+            <p class="content-p" id="curriculum-intro"></p>
             <div class="curriculum-list" id="curriculum-list">
-              <div class="curriculum-item">
-                <div class="curriculum-num">01</div>
-                <div class="curriculum-body">
-                  <h4>Introduction to Clay Types</h4>
-                  <p>Learn the difference between earthenware, stoneware, and porcelain — and which is best for different projects.</p>
-                </div>
-              </div>
-              <div class="curriculum-item">
-                <div class="curriculum-num">02</div>
-                <div class="curriculum-body">
-                  <h4>Wedging &amp; Preparation</h4>
-                  <p>Proper wedging techniques to remove air bubbles and create even consistency throughout your clay.</p>
-                </div>
-              </div>
-              <div class="curriculum-item">
-                <div class="curriculum-num">03</div>
-                <div class="curriculum-body">
-                  <h4>Pinch Pot Fundamentals</h4>
-                  <p>The most ancient hand-building technique — create a small vessel using only your hands and patience.</p>
-                </div>
-              </div>
-              <div class="curriculum-item">
-                <div class="curriculum-num">04</div>
-                <div class="curriculum-body">
-                  <h4>Coil Building</h4>
-                  <p>Build taller forms by stacking coils of clay. Great for bowls, vases, and sculptural work.</p>
-                </div>
-              </div>
-              <div class="curriculum-item">
-                <div class="curriculum-num">05</div>
-                <div class="curriculum-body">
-                  <h4>Surface Decoration</h4>
-                  <p>Stamps, carving, and slip trailing to add texture and personal character to your piece.</p>
-                </div>
-              </div>
-              <div class="curriculum-item">
-                <div class="curriculum-num">06</div>
-                <div class="curriculum-body">
-                  <h4>Glazing Overview</h4>
-                  <p>A walkthrough of our glaze palette and how different colours behave in the kiln — so you can choose wisely!</p>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -208,63 +154,8 @@
         <div class="tab-panel" id="tab-includes">
           <div class="content-block">
             <h2 class="content-h2">Everything <em>Included</em></h2>
-            <div class="includes-grid">
-              <div class="includes-card included">
-                <span class="includes-icon">✅</span>
-                <div>
-                  <h4>Clay &amp; Materials</h4>
-                  <p>Premium stoneware clay, enough for 1–2 pieces per session.</p>
-                </div>
-              </div>
-              <div class="includes-card included">
-                <span class="includes-icon">✅</span>
-                <div>
-                  <h4>All Tools</h4>
-                  <p>Wire cutters, ribs, loop tools, sponges, stamps — everything you need.</p>
-                </div>
-              </div>
-              <div class="includes-card included">
-                <span class="includes-icon">✅</span>
-                <div>
-                  <h4>Expert Instruction</h4>
-                  <p>Certified instructor guidance throughout the entire session.</p>
-                </div>
-              </div>
-              <div class="includes-card included">
-                <span class="includes-icon">✅</span>
-                <div>
-                  <h4>Firing &amp; Glazing</h4>
-                  <p>Bisque firing, glaze application, and final kiln firing. All on-site.</p>
-                </div>
-              </div>
-              <div class="includes-card included">
-                <span class="includes-icon">✅</span>
-                <div>
-                  <h4>Apron</h4>
-                  <p>We'll keep your clothes safe with a studio apron.</p>
-                </div>
-              </div>
-              <div class="includes-card included">
-                <span class="includes-icon">✅</span>
-                <div>
-                  <h4>Tea &amp; Coffee</h4>
-                  <p>Complimentary refreshments to fuel your creativity.</p>
-                </div>
-              </div>
-              <div class="includes-card not-included">
-                <span class="includes-icon">❌</span>
-                <div>
-                  <h4>Extra Clay Packs</h4>
-                  <p>Additional clay packs available to purchase in-studio if needed.</p>
-                </div>
-              </div>
-              <div class="includes-card not-included">
-                <span class="includes-icon">❌</span>
-                <div>
-                  <h4>Transport / Packaging</h4>
-                  <p>Finished pieces need to be collected in-studio. Packaging is extra.</p>
-                </div>
-              </div>
+            <div class="includes-grid" id="includes-grid">
+              
             </div>
           </div>
         </div>
@@ -275,9 +166,9 @@
             <h2 class="content-h2">Student <em>Reviews</em></h2>
             <div class="reviews-summary">
               <div class="reviews-score">
-                <div class="reviews-big-num">4.9</div>
+                <div class="reviews-big-num" id="reviews-big-num">4.9</div>
                 <div class="reviews-stars">★★★★★</div>
-                <div class="reviews-count">from 230 reviews</div>
+                <div class="reviews-count" id="reviews-count">from 230 reviews</div>
               </div>
               <div class="reviews-bars">
                 <div class="rbar-row"><span>5★</span><div class="rbar"><div class="rbar-fill" style="width:88%"></div></div><span>88%</span></div>
@@ -287,40 +178,8 @@
                 <div class="rbar-row"><span>1★</span><div class="rbar"><div class="rbar-fill" style="width:0%"></div></div><span>0%</span></div>
               </div>
             </div>
-            <div class="reviews-list">
-              <div class="review-card">
-                <div class="review-header">
-                  <div class="review-avatar">P</div>
-                  <div class="review-meta">
-                    <div class="review-name">Priya Mehta</div>
-                    <div class="review-date">March 2026</div>
-                  </div>
-                  <div class="review-stars">★★★★★</div>
-                </div>
-                <p class="review-body">"I walked in knowing nothing about pottery and left with a beautiful bowl I made myself. The instructors are patient, warm, and genuinely passionate. Already booked my next session!"</p>
-              </div>
-              <div class="review-card">
-                <div class="review-header">
-                  <div class="review-avatar">R</div>
-                  <div class="review-meta">
-                    <div class="review-name">Rahul Sharma</div>
-                    <div class="review-date">February 2026</div>
-                  </div>
-                  <div class="review-stars">★★★★★</div>
-                </div>
-                <p class="review-body">"Such a therapeutic experience. The atmosphere is cozy, the instructors explain everything step-by-step. My little pinch pot is now proudly on my shelf at home."</p>
-              </div>
-              <div class="review-card">
-                <div class="review-header">
-                  <div class="review-avatar">S</div>
-                  <div class="review-meta">
-                    <div class="review-name">Sneha Iyer</div>
-                    <div class="review-date">January 2026</div>
-                  </div>
-                  <div class="review-stars">★★★★★</div>
-                </div>
-                <p class="review-body">"Came here for a birthday experience and it honestly exceeded all expectations. The studio is gorgeous, the vibe is warm, and I made something I'm actually proud of."</p>
-              </div>
+            <div class="reviews-list" id="reviews-list">
+              
             </div>
           </div>
         </div>
@@ -336,7 +195,7 @@
               <span class="booking-price" id="sidebar-price">₹1,200</span>
               <span class="booking-per" id="sidebar-per">/ session</span>
             </div>
-            <div class="booking-rating">★ 4.9 (230)</div>
+            <div class="booking-rating" id="booking-rating">★ 4.9 (230)</div>
           </div>
 
           <div class="booking-form">
@@ -363,8 +222,8 @@
                 <option>5+ people</option>
               </select>
             </div>
-            <a href="/services/service-detail.html" class="cta-primary booking-cta">Book Now →</a>
-            <a href="/contact/contact.html" class="cta-outline booking-cta-outline">Ask a Question</a>
+            <a href="../contact/contact.html" class="cta-primary booking-cta">Book Now →</a>
+            <a href="../contact/contact.html" class="cta-outline booking-cta-outline">Ask a Question</a>
           </div>
 
           <div class="booking-assurances">
@@ -377,30 +236,9 @@
         
         <div class="related-card">
           <h4 class="related-title">You Might Also Like</h4>
-          <a href="service-detail.html?id=wheel-throwing" class="related-item">
-            <span class="related-emoji">🎡</span>
-            <div>
-              <div class="related-name">Wheel Throwing</div>
-              <div class="related-price">₹1,800 / session</div>
-            </div>
-            <span class="related-arrow">→</span>
-          </a>
-          <a href="service-detail.html?id=private-sessions" class="related-item">
-            <span class="related-emoji">🎯</span>
-            <div>
-              <div class="related-name">Private Sessions</div>
-              <div class="related-price">₹3,200 / session</div>
-            </div>
-            <span class="related-arrow">→</span>
-          </a>
-          <a href="service-detail.html?id=studio-membership" class="related-item">
-            <span class="related-emoji">🎟️</span>
-            <div>
-              <div class="related-name">Studio Membership</div>
-              <div class="related-price">₹4,999 / month</div>
-            </div>
-            <span class="related-arrow">→</span>
-          </a>
+          <div id="related-sidebar-list">
+            
+          </div>
         </div>
       </div>
 
@@ -416,31 +254,8 @@
       </div>
       <a href="services.html" class="cta-outline">View All Services →</a>
     </div>
-    <div class="related-grid">
-      <a href="service-detail.html?id=wheel-throwing" class="related-service-card">
-        <div class="rsc-thumb rsc-green">🎡</div>
-        <div class="rsc-body">
-          <span class="rsc-cat">Classes</span>
-          <h4>Wheel Throwing</h4>
-          <div class="rsc-price">₹1,800 / session</div>
-        </div>
-      </a>
-      <a href="service-detail.html?id=advanced-ceramics" class="related-service-card">
-        <div class="rsc-thumb rsc-purple">🎨</div>
-        <div class="rsc-body">
-          <span class="rsc-cat">Classes</span>
-          <h4>Advanced Ceramics</h4>
-          <div class="rsc-price">₹2,500 / session</div>
-        </div>
-      </a>
-      <a href="service-detail.html?id=corporate-events" class="related-service-card">
-        <div class="rsc-thumb rsc-dark">🏢</div>
-        <div class="rsc-body">
-          <span class="rsc-cat">Events</span>
-          <h4>Corporate Events</h4>
-          <div class="rsc-price">Custom pricing</div>
-        </div>
-      </a>
+    <div class="related-grid" id="related-grid-bottom">
+      
     </div>
   </section>
 

@@ -68,6 +68,14 @@
   background: rgba(212,149,50,0.15);
   color: #9a6200;
 }
+.detail-badge.badge-popular  { color: #C07845; background: rgba(192,120,69,0.14); }
+.detail-badge.badge-level    { color: #5a8a6a; background: rgba(90,138,106,0.14); }
+.detail-badge.badge-advanced { color: #7065a8; background: rgba(112,101,168,0.14); }
+.detail-badge.badge-featured { color: #B85C00; background: rgba(255,220,180,0.95); }
+.detail-badge.badge-kids     { color: #D45050; background: rgba(212,80,80,0.14); }
+.detail-badge.badge-event    { color: #8B5E3C; background: rgba(139,94,60,0.14); }
+.detail-badge.badge-studio   { color: #8B5E3C; background: rgba(139,94,60,0.14); }
+.detail-category-pill.pill-gold { color: #9a6200; background: rgba(212,149,0,0.12); }
 
 .detail-title {
   font-family: 'Playfair Display', serif;
@@ -152,13 +160,21 @@
   animation: fadeIn 0.9s 0.2s ease both;
 }
 .detail-visual-card {
-  width: 340px; height: 380px;
+  width: 380px; height: 420px;
   border-radius: 32px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 8rem;
   position: relative;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
   box-shadow: 0 24px 80px rgba(139,94,60,0.25);
+}
+.detail-visual-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.35) 100%);
+  pointer-events: none;
 }
 .detail-visual-glow {
   position: absolute;
@@ -168,12 +184,31 @@
   top: 20%; left: 50%;
   transform: translateX(-50%);
   pointer-events: none;
-}
-.detail-visual-emoji {
-  font-size: 9rem;
-  position: relative;
   z-index: 1;
-  animation: floatY 5s ease-in-out infinite;
+}
+
+
+.cat-classes    { background-color: #d4956a; background-image: linear-gradient(135deg, #f0dcc5, #d4956a); }
+.cat-membership { background-color: #c89040; background-image: linear-gradient(135deg, #fde8c5, #c89040); }
+.cat-events     { background-color: #5a6e8a; background-image: linear-gradient(135deg, #cfd8e8, #5a6e8a); }
+.cat-studio     { background-color: #d44f1e; background-image: linear-gradient(135deg, #f9e0b5, #d44f1e); }
+
+
+.gallery-strip { margin-top: 40px; }
+.gallery-strip-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.gallery-img {
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(139,94,60,0.14);
+  width: 100%;
+  height: 440px;
 }
 
 
@@ -588,6 +623,8 @@
   .process-grid-detail, .know-grid, .includes-grid { grid-template-columns: 1fr; }
   .related-grid { grid-template-columns: 1fr 1fr; }
   .reviews-summary { flex-direction: column; gap: 24px; }
+  .gallery-strip-inner { padding: 0 20px; }
+  .gallery-img { height: 300px; }
 }
 @media (max-width: 640px) {
   .detail-hero-inner { padding: 24px 20px 60px; }
@@ -597,4 +634,5 @@
   .related-grid { grid-template-columns: 1fr; }
   .dtab { padding: 14px 16px; font-size: 0.82rem; }
   .detail-cta-row { flex-direction: column; align-items: flex-start; }
+  .gallery-img { height: 220px; border-radius: 16px; }
 }
