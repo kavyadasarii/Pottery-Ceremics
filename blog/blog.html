@@ -8,10 +8,10 @@
   
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
-  
+ <link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
   <link rel="stylesheet" href="../global-css/global.css"/>
   <link rel="stylesheet" href="../global-css/navbar.css"/>
-
+  <link rel="stylesheet" href="../global-css/footer.css"/>
   
   <link rel="stylesheet" href="blog.css"/>
 </head>
@@ -27,7 +27,12 @@
       <h1 class="page-hero-title">Stories from the <em>Studio</em></h1>
       <p class="page-hero-sub">Tips, techniques, inspiration, and tales from potters who've shaped something beautiful — right here in Hyderabad.</p>
       <div class="page-hero-divider"><span></span><span></span><span></span></div>
+      <div class="hero-cta-row">
+        <a href="#blog-grid" class="cta-primary">Browse the Journal</a>
+        <a href="../contact/contact.html" class="cta-outline">Book a Class</a>
+      </div>
     </div>
+    <div class="page-hero-wheel"></div>
     <div class="page-hero-bg-shape"></div>
     <div class="page-hero-bg-shape shape-two"></div>
   </section>
@@ -71,7 +76,7 @@
   </div>
 
   
-  <section class="blog-section">
+  <section class="blog-section" id="blog-grid">
     <div class="blog-grid-wrap reveal">
       <div class="blog-grid">
 
@@ -242,15 +247,29 @@
       <div class="sidebar-card">
         <h4 class="sidebar-heading">Categories</h4>
         <div class="category-pills">
-          <a href="#" class="cat-pill">Technique <span>8</span></a>
-          <a href="#" class="cat-pill">For Beginners <span>5</span></a>
-          <a href="#" class="cat-pill">Inspiration <span>7</span></a>
-          <a href="#" class="cat-pill">Studio Life <span>4</span></a>
-          <a href="#" class="cat-pill">Events <span>3</span></a>
+          <a href="#" class="cat-pill" data-category="technique">Technique <span>8</span></a>
+          <a href="#" class="cat-pill" data-category="beginners">For Beginners <span>5</span></a>
+          <a href="#" class="cat-pill" data-category="inspiration">Inspiration <span>7</span></a>
+          <a href="#" class="cat-pill" data-category="studio-life">Studio Life <span>4</span></a>
+          <a href="#" class="cat-pill" data-category="events">Events <span>3</span></a>
         </div>
       </div>
 
     </aside>
+  </section>
+
+  
+  <section class="cta-banner reveal">
+    <div class="cta-banner-inner">
+      <div class="cta-banner-ring"></div>
+      <p class="cta-banner-eyebrow">Join Us in the Studio</p>
+      <h2 class="cta-banner-title">Ready to Get Your Hands in the Clay?</h2>
+      <p class="cta-banner-sub">Beginner-friendly classes run every week — no experience needed, just a willingness to get a little messy.</p>
+      <div class="cta-banner-btns">
+        <a href="../contact/contact.html" class="cta-primary">Book a Class</a>
+        <a href="contact.html" class="cta-outline">Visit the Studio</a>
+      </div>
+    </div>
   </section>
 
   
@@ -259,6 +278,7 @@
   
   <script src="../global-js/global.js"></script>
   <script src="../global-js/navbar.js"></script>
+  <script src="../global-js/footer.js"></script>
   <script src="blog.js"></script>
 
 </body>
