@@ -1,0 +1,126 @@
+// footer.js — injects the footer directly, no fetch() involved.
+//
+// Why: fetch('components/footer.html') depends on getting the exact
+// relative path right from every page, at every folder depth, on
+// whatever server is running — and that's been failing (404s, stale
+// cache, or partial reads). Embedding the markup here removes all of
+// that: there's nothing to 404, nothing to cache incorrectly, nothing
+// that depends on folder-depth guessing.
+
+(function () {
+
+  var FOOTER_HTML = [
+'<footer class="footer">',
+'  <div class="footer-container">',
+
+'    <div class="footer-col footer-brand">',
+'      <h2 class="footer-logo">',
+'        <span class="logo-badge">',
+'          <svg width="20" height="20" viewBox="0 0 64 64" aria-hidden="true">',
+'            <path d="M22 12h20l-2 8c4 3 6.5 8 6.5 14 0 11-8 18.5-14.5 22-6.5-3.5-14.5-11-14.5-22 0-6 2.5-11 6.5-14l-2-8z" fill="#fff"/>',
+'            <rect x="21" y="12" width="22" height="4.5" rx="2.2" fill="#fff"/>',
+'          </svg>',
+'        </span>',
+'        <span class="logo-text-group">',
+'          <span class="logo-text"><strong>Terra</strong><em>Kiln</em></span>',
+'          <span class="logo-subtitle">Pottery Studio</span>',
+'        </span>',
+'      </h2>',
+'      <p>A modern pottery studio devoted to slow craftsmanship, honest materials, and objects made to last.</p>',
+
+'      <div class="socials">',
+'        <a href="#" class="social-icon" aria-label="Instagram">',
+'          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>',
+'        </a>',
+'        <a href="#" class="social-icon" aria-label="Pinterest">',
+'          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.63 7.86 6.35 9.32-.09-.79-.17-2.01.03-2.87.19-.79 1.22-5.06 1.22-5.06s-.31-.62-.31-1.54c0-1.44.84-2.52 1.88-2.52.89 0 1.31.66 1.31 1.46 0 .89-.57 2.21-.86 3.44-.25 1.03.52 1.87 1.53 1.87 1.84 0 3.25-1.94 3.25-4.74 0-2.48-1.78-4.21-4.33-4.21-2.95 0-4.68 2.21-4.68 4.5 0 .89.34 1.85.77 2.37.08.1.09.19.07.29-.08.32-.25 1.03-.29 1.17-.05.19-.15.24-.35.14-1.3-.6-2.11-2.5-2.11-4.02 0-3.27 2.38-6.28 6.86-6.28 3.6 0 6.4 2.57 6.4 5.99 0 3.57-2.25 6.45-5.38 6.45-1.05 0-2.04-.55-2.38-1.19l-.65 2.47c-.23.9-.87 2.02-1.29 2.71.97.3 2 .46 3.06.46 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>',
+'        </a>',
+'        <a href="#" class="social-icon" aria-label="TikTok">',
+'          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 2h-3v13.5a3 3 0 1 1-2.4-2.94V9.4a6.1 6.1 0 1 0 5.4 6.06V8.2a7.6 7.6 0 0 0 4.5 1.45V6.6a4.6 4.6 0 0 1-4.5-4.6z"/></svg>',
+'        </a>',
+'      </div>',
+'    </div>',
+
+'    <div class="footer-col">',
+'      <h3>Quick Links</h3>',
+'      <div class="footer-divider"></div>',
+'      <a href="/home-1/home.html">Home</a>',
+'      <a href="/about/about.html">About Us</a>',
+'      <a href="/services/services.html">Services</a>',
+'      <a href="/blog/blog.html">Blog</a>',
+'      <a href="/contact/contact.html">Contact</a>',
+'    </div>',
+
+'    <div class="footer-col">',
+'      <h3>Our Classes</h3>',
+'      <div class="footer-divider"></div>',
+'      <a href="/services/service-detail.html?id=beginner-pottery">Beginner Pottery</a>',
+'      <a href="/services/service-detail.html?id=wheel-throwing">Wheel Throwing</a>',
+'      <a href="/services/service-detail.html?id=advanced-ceramics">Advanced Ceramics</a>',
+'      <a href="/services/service-detail.html?id=kids-workshop">Kids Workshop</a>',
+'      <a href="/services/service-detail.html?id=private-sessions">Private Sessions</a>',
+'    </div>',
+
+'    <div class="footer-col">',
+'      <h3>Contact</h3>',
+'      <div class="footer-divider"></div>',
+'      <div class="footer-contact">',
+'        <p><span class="footer-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span> +91 9999999999</p>',
+'        <p><span class="footer-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="M2 6.5l8.5 6.2a2.6 2.6 0 0 0 3 0L22 6.5"/></svg></span> hello@terrakiln.com</p>',
+'        <p><span class="footer-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10.5c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0z"/><circle cx="12" cy="10.5" r="2.7"/></svg></span> Hyderabad, Telangana</p>',
+'        <p><span class="footer-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.75-.86-2-.96-.28-.1-.48-.15-.68.15-.2.3-.78.96-.95 1.16-.18.2-.35.22-.65.07-.97-.48-2.36-1.16-3.44-2.83-.26-.45.26-.42.74-1.4.1-.2.05-.38-.03-.53-.08-.15-.68-1.65-.93-2.25-.25-.6-.5-.5-.68-.5-.18 0-.5 0-.75.3-.25.3-1 .98-1 2.4 0 1.4 1.02 2.75 1.16 2.95.14.2 1.98 3.03 4.8 4.13 2.35.9 2.35.6 2.8.56.45-.04 1.75-.7 2-1.37.25-.68.25-1.25.18-1.37-.07-.13-.3-.2-.57-.35z"/><path d="M12 2C6.48 2 2 6.48 2 12c0 1.94.56 3.75 1.53 5.28L2 22l4.9-1.48A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18a8 8 0 0 1-4.32-1.27l-.31-.19-3.05.92.94-2.98-.2-.32A8 8 0 1 1 12 20z"/></svg></span> WhatsApp</p>',
+'      </div>',
+'    </div>',
+
+'  </div>',
+
+'  <div class="footer-bottom">',
+'    <p>\u00A9 <span id="footerYear"></span> TerraKiln. All Rights Reserved.</p>',
+'  </div>',
+'</footer>'
+  ].join('');
+
+  function renderFooter() {
+    var placeholder = document.getElementById('footer-placeholder');
+    if (!placeholder) return;
+
+    placeholder.outerHTML = FOOTER_HTML;
+
+    // Re-run the same link-prefixing logic global.js uses for fetched
+    // components, so relative hrefs still resolve correctly at every
+    // folder depth — this only runs if global.js's fixComponentLinks
+    // is actually loaded on the page.
+    if (typeof fixComponentLinks === 'function') {
+      fixComponentLinks(document.body);
+    }
+
+    if (typeof window.initFooter === 'function') {
+      window.initFooter();
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderFooter);
+  } else {
+    renderFooter();
+  }
+
+})();
+
+
+// initFooter — copyright year + any future footer behavior.
+// Called automatically by renderFooter() above once the markup is in the DOM.
+window.initFooter = function () {
+  var footer = document.querySelector('.footer');
+  if (!footer) return;
+
+  var yearEl = footer.querySelector('#footerYear');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  var backToTop = footer.querySelector('.back-to-top');
+  if (backToTop) {
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+};

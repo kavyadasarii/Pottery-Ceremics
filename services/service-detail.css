@@ -572,7 +572,7 @@
 .section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 48px; flex-wrap: wrap; gap: 16px; }
 .cta-outline { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border: 2px solid var(--primary); color: var(--primary); border-radius: 10px; font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: background 0.2s, color 0.2s; }
 .cta-outline:hover { background: var(--primary); color: #fff; }
-.cta-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; border-radius: 10px; font-size: 0.95rem; font-weight: 600; text-decoration: none; box-shadow: 0 6px 24px rgba(139,94,60,0.3); transition: transform 0.2s, box-shadow 0.2s; }
+.cta-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: linear-gradient(135deg, var(--primary), var(--secondary, var(--primary-dark))); color: #fff; border-radius: 10px; font-size: 0.95rem; font-weight: 600; text-decoration: none; box-shadow: 0 6px 24px rgba(139,94,60,0.3); transition: transform 0.2s, box-shadow 0.2s; }
 .cta-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(139,94,60,0.4); }
 
 .related-grid {

@@ -1,23 +1,28 @@
 :root {
-  --bg-color:   #ffffff;
-  --text-color: #2c2c2c;
-  --primary:    #8B5E3C;
-  --secondary:  #D6A77A;
-  --card-bg:    #ffffff;
-  --muted:      #7A6150;
+  --primary:       #8B5E3C;
+  --primary-dark:  #6B4428;
+  --secondary:     #6B4428;
+  --accent:        #E8A96A;
+  --bg-color:      #FDFAF6;
+  --card-bg:       #F7F0E8;
+  --text-color:    #2A1A0E;
+  --muted:         #7A6150;
   --border:     rgba(139, 94, 60, 0.14);
 }
 
 body.dark-mode {
-  --bg-color:   #000000;
-  --text-color: #E8EAF0;
-  --primary:    #D6A77A;
-  --secondary:  #8B5E3C;
-  --card-bg:    #1a1a1a;
-  --muted:      #A8AEBB;
-  --border:     rgba(214, 167, 122, 0.16);
+  --primary:       #8B5E3C;
+  --primary-dark:  #A9713F;
+  --secondary:     #A9713F;
+  --accent:        #E8A96A;
+  --bg-color:      #1E140F;
+  --card-bg:      #2A1B14;
+  --text-color:    #F2EFEA;
+  --muted:         #A39A91;
+  --border:        rgba(255, 255, 255, 0.10);
 }
-
+ 
+  
 *,
 *::before,
 *::after {
@@ -40,53 +45,5 @@ body {
   line-height: 1.6;
   transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow-x: hidden;
-  padding-top: 56px; 
-}
-
-
-.footer {
-  background: var(--card-bg);
-  padding: 60px 40px 20px;
-  margin-top: 50px;
-  border-top: 1px solid var(--border);
-  transition: background 0.4s ease, border-color 0.4s ease;
-}
-.footer-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-.footer-col { max-width: 250px; }
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--primary);
-  margin-bottom: 10px;
-  font-weight: 800;
-}
-.footer-logo-icon { flex-shrink: 0; display: block; }
-.footer-col h3 { margin-bottom: 10px; font-size: 1rem; font-weight: 700; }
-.footer-col a {
-  display: block;
-  text-decoration: none;
-  color: var(--text-color);
-  margin: 5px 0;
-  font-size: 0.9rem;
-  opacity: 0.75;
-  transition: color 0.2s, opacity 0.2s;
-}
-.footer-col a:hover { color: var(--primary); opacity: 1; }
-.socials { display: flex; gap: 10px; margin-top: 14px; }
-.socials span { font-size: 18px; cursor: pointer; }
-.footer-bottom {
-  border-top: 1px solid var(--border);
-  margin-top: 30px;
-  padding-top: 15px;
-  text-align: center;
-  font-size: 14px;
-  opacity: 0.6;
+  padding-top: 60px; 
 }

@@ -9,6 +9,10 @@ function initNavbar() {
     console.warn('initNavbar: elements not found. Ensure navbar HTML is injected first.');
     return;
   }
+  if (navbar.dataset.navInit === 'true') {
+    return;
+  }
+  navbar.dataset.navInit = 'true';
 
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 10);
@@ -33,7 +37,7 @@ function initNavbar() {
     if (e.key === 'Escape') toggleDrawer(false);
   });
 
-  // ── Mobile accordion ──
+  
   document.querySelectorAll('.mob-acc-toggle').forEach((btn) => {
     btn.addEventListener('click', () => {
       const targetId = btn.dataset.target;
@@ -98,11 +102,12 @@ function initNavbar() {
     btn.addEventListener('click', () => applyRTL(!isRTL));
   });
 }
+
 (function () {
   function normalize(path) {
     try {
-      var url = new URL(path, window.location.origin);
-      var p = url.pathname.replace(/\/+$/, '');
+      var url = new URL(path, window.location.href);
+      var p = url.pathname.replace(/\/index\.html$/i, '/').replace(/\/+$/, '');
       return p === '' ? '/' : p;
     } catch (e) {
       return path;
@@ -138,10 +143,7 @@ function initNavbar() {
       if (mobHomeToggle) mobHomeToggle.classList.add('active');
     }
   }
- 
-  // The navbar may be injected asynchronously (fetch + innerHTML) after this
-  // script runs, so wait for it to actually exist in the DOM before applying
-  // active states. If it's already there, this resolves on the first check.
+  
   function whenNavbarReady(callback) {
     if (document.querySelector('.navbar')) {
       callback();
@@ -158,14 +160,17 @@ function initNavbar() {
       subtree: true
     });
   }
+
+  function boot() {
+    whenNavbarReady(function () {
+      initNavbar();
+      applyActiveStates();
+    });
+  }
  
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () {
-      whenNavbarReady(applyActiveStates);
-    });
+    document.addEventListener('DOMContentLoaded', boot);
   } else {
-    whenNavbarReady(applyActiveStates);
+    boot();
   }
 })();
- 
-

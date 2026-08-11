@@ -1,55 +1,53 @@
-
 <header class="navbar" id="navbar" role="banner">
   <div class="nav-container">
 
     <a href="/home-1/home.html" class="nav-logo">
-      <svg class="nav-logo-icon" width="26" height="26" viewBox="0 0 64 64" aria-hidden="true">
-        <defs>
-          <linearGradient id="navLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#b07a4f"/>
-            <stop offset="100%" stop-color="#e8a96a"/>
-          </linearGradient>
-        </defs>
-        <path d="M24 14h16l-1.5 6.5c3 2.2 5 6 5 10.5 0 8-6 14.5-11.5 18.5-5.5-4-11.5-10.5-11.5-18.5 0-4.5 2-8.3 5-10.5L24 14z"
-              fill="none" stroke="url(#navLogoGrad)" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
-        <line x1="23" y1="20" x2="41" y2="20" stroke="url(#navLogoGrad)" stroke-width="4" stroke-linecap="round"/>
-      </svg>
-      <span>Clay</span><em>Craft</em>
+      <span class="logo-badge">
+        <svg width="20" height="20" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M22 12h20l-2 8c4 3 6.5 8 6.5 14 0 11-8 18.5-14.5 22-6.5-3.5-14.5-11-14.5-22 0-6 2.5-11 6.5-14l-2-8z"
+                fill="#fff"/>
+          <rect x="21" y="12" width="22" height="4.5" rx="2.2" fill="#fff"/>
+        </svg>
+      </span>
+      <span class="logo-text-group">
+        <span class="logo-text"><strong>Terra</strong><em>Kiln</em></span>
+        <span class="logo-subtitle">Pottery Studio</span>
+      </span>
     </a>
 
-    
     <ul class="nav-links" role="navigation" aria-label="Main navigation">
 
       <li class="nav-item dropdown">
         <a href="/home-1/home.html" class="nav-link">Home <span class="arrow">▾</span></a>
         <div class="dropdown-menu">
-          <a href="/home-2/home2.html">Home 2</a>
+          <a href="/home-1/home.html" class="dropdown-link">
+            <span class="dd-title">Home Classic</span>
+            <span class="dd-subtitle">Warm, timeless layout</span>
+          </a>
+          <a href="/home-2/home2.html" class="dropdown-link">
+            <span class="dd-title">Home Modern</span>
+            <span class="dd-subtitle">Bold, contemporary layout</span>
+          </a>
         </div>
       </li>
 
-      <li class="nav-item">
-        <a href="/about/about.html" class="nav-link">About Us</a>
-      </li>
+      <li class="nav-item"><a href="/about/about.html" class="nav-link">About Us</a></li>
       <li class="nav-item"><a href="/services/services.html" class="nav-link">Services</a></li>
       <li class="nav-item"><a href="/blog/blog.html" class="nav-link">Blog</a></li>
       <li class="nav-item"><a href="/contact/contact.html" class="nav-link">Contact</a></li>
-
-      
       <li class="nav-item"><a href="/dashboard/dashboard.html" class="nav-link">Dashboard</a></li>
 
     </ul>
 
-    
     <div class="nav-actions">
-      <button id="rtl-toggle" class="nav-pill-btn rtl-btn" aria-label="Toggle RTL">RTL</button>
-      <button id="theme-toggle" class="nav-pill-btn theme-btn" aria-label="Toggle theme">🌙</button>
+      <button id="rtl-toggle" class="nav-icon-btn rtl-btn" aria-label="Toggle RTL">⇄</button>
+      <button id="theme-toggle" class="nav-icon-btn theme-btn" aria-label="Toggle theme">🌙</button>
       <a href="/login/signup.html" class="nav-pill-btn signup-btn">Sign Up</a>
     </div>
 
-    
     <div class="mobile-header-actions">
-      <button id="theme-toggle-mobile" class="nav-pill-btn theme-btn" aria-label="Toggle theme">🌙</button>
-      <button id="rtl-toggle-mobile" class="nav-pill-btn rtl-btn" aria-label="Toggle RTL">RTL</button>
+      <button id="theme-toggle-mobile" class="nav-icon-btn theme-btn" aria-label="Toggle theme">🌙</button>
+      <button id="rtl-toggle-mobile" class="nav-icon-btn rtl-btn" aria-label="Toggle RTL">⇄</button>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span class="ham-bar"></span>
         <span class="ham-bar"></span>
@@ -68,20 +66,19 @@
       Home<span class="mob-acc-icon">▾</span>
     </button>
     <div class="mob-acc-body" id="mob-home">
-      <a href="/home-1/home.html">Home 1</a>
-      <a href="/home-2/home2.html">Home 2</a>
+      <a href="/home-1/home.html">Home Classic</a>
+      <a href="/home-2/home2.html">Home Modern</a>
     </div>
   </div>
 
   <a href="/about/about.html" class="mob-link">About Us</a>
-<a href="/services/services.html" class="mob-link">Services</a>
+  <a href="/services/services.html" class="mob-link">Services</a>
   <a href="/blog/blog.html" class="mob-link">Blog</a>
   <a href="/contact/contact.html" class="mob-link">Contact</a>
   <a href="/dashboard/dashboard.html" class="mob-link">Dashboard</a>
 
-  
   <div class="mob-actions">
-    <a href="/login/signup.html" class="nav-pill-btn signup-btn">Sign Up</a>
+    <a href="/login/signup.html" class="nav-pill-btn signup-btn">Sign In</a>
   </div>
 
 </div>
