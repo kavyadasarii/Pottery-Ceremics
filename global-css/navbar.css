@@ -205,10 +205,15 @@ body {
   z-index: 999;
 }
 
-.nav-item:hover .dropdown-menu {
+.nav-item:hover .dropdown-menu,
+.nav-item.dropdown.open .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
+}
+
+.nav-item.dropdown.open .nav-link .arrow {
+  transform: rotate(180deg);
 }
 
 .dropdown-link {

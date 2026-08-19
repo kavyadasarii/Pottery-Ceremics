@@ -77,6 +77,53 @@ function initNavbar() {
     btn.addEventListener('click', () => applyTheme(!isDark));
   });
 
+  const dropdownItems = document.querySelectorAll('.nav-item.dropdown');
+
+  function hasRealHover() {
+    return window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  }
+
+  function closeAllDropdowns(except) {
+    dropdownItems.forEach((item) => {
+      if (item !== except) {
+        item.classList.remove('open');
+        const link = item.querySelector('.nav-link');
+        if (link) link.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  dropdownItems.forEach((item) => {
+    const trigger = item.querySelector('.nav-link');
+    if (!trigger) return;
+
+    trigger.setAttribute('aria-haspopup', 'true');
+    trigger.setAttribute('aria-expanded', 'false');
+
+    trigger.addEventListener('click', (e) => {
+     
+      if (!hasRealHover()) {
+        const isOpen = item.classList.contains('open');
+        if (!isOpen) {
+          e.preventDefault();
+          closeAllDropdowns(item);
+          item.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      }
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-item.dropdown')) {
+      closeAllDropdowns();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAllDropdowns();
+  });
+
   const rtlToggles = document.querySelectorAll('.rtl-btn');
   let isRTL = document.documentElement.getAttribute('dir') === 'rtl';
 

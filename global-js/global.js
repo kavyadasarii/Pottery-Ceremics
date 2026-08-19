@@ -67,9 +67,6 @@ async function loadComponent(selector, url) {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const html = await res.text();
 
-    // Diagnostic: if this logs a suspiciously small number for
-    // components/footer.html, the fetched file itself is incomplete —
-    // that's a file-on-disk problem, not a CSS or JS problem.
     console.log(`[loadComponent] ${url} -> ${html.length} chars`);
 
     el.innerHTML = html;
@@ -131,9 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (navPlaceholder) {
     promises.push(loadComponent('#navbar-placeholder', getComponentPath('navbar.html')));
   }
-  // footer-placeholder is no longer fetched here — footer.js injects
-  // it directly and calls initFooter() itself once it's in the DOM.
-
   Promise.all(promises).then(() => {
     if (typeof initNavbar === 'function') initNavbar();
     initReveal();
