@@ -116,10 +116,11 @@ input,select,textarea{font-family:inherit}
 .logo-text{
   font-family:'Cormorant Garamond',serif;
   font-size:1.25rem;
+  font-weight:700;
   letter-spacing:.01em;
 }
 .logo-text strong{font-weight:700;color:var(--text)}
-.logo-text em{font-style:normal;font-weight:600;color:var(--primary)}
+.logo-text .logo-accent{color:var(--primary)}
 .logo-subtitle{
   font-family:'DM Sans',sans-serif;
   font-size:.6rem;font-weight:600;letter-spacing:.14em;
@@ -265,6 +266,7 @@ input,select,textarea{font-family:inherit}
   position:relative;
 }
 .icon-btn:hover{background:var(--primary-light);color:var(--primary);border-color:var(--primary-mid)}
+.icon-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
 .notif-dot{
   position:absolute;top:7px;right:7px;
   width:8px;height:8px;border-radius:50%;
@@ -589,4 +591,26 @@ input,select,textarea{font-family:inherit}
   background:var(--primary-light);color:var(--primary);
   display:flex;align-items:center;justify-content:center;
   font-size:1.6rem;margin:0 auto 12px;
+}
+
+html[dir="rtl"] .sidebar{border-right:none;border-left:1px solid var(--border)}
+html[dir="rtl"] .sidebar-toggle{right:auto;left:-13px;transform:translateY(-50%) scaleX(-1)}
+html[dir="rtl"] .sidebar.collapsed .sidebar-toggle{transform:translateY(-50%) scaleX(-1) rotate(180deg)}
+html[dir="rtl"] .sidebar.collapsed .logo-badge{margin-left:0;margin-right:1px}
+html[dir="rtl"] .notif-dot{right:auto;left:7px}
+html[dir="rtl"] .welcome-banner::before{right:auto;left:70px}
+html[dir="rtl"] .welcome-banner::after{right:auto;left:-40px}
+html[dir="rtl"] .welcome-date{text-align:left}
+html[dir="rtl"] .data-table th{text-align:right}
+html[dir="rtl"] .notif-item.unread::before{left:auto;right:0}
+html[dir="rtl"] .profile-hero::after{right:auto;left:-30px}
+html[dir="rtl"] .toggle::after{left:auto;right:3px;transition:right 0.2s}
+html[dir="rtl"] .toggle.on::after{right:23px}
+html[dir="rtl"] .schedule-badge{margin-left:0;margin-right:auto}
+html[dir="rtl"] .student-progress{margin-left:0;margin-right:auto}
+html[dir="rtl"] .status-dot{margin-right:0;margin-left:6px}
+
+@media (max-width:900px){
+  html[dir="rtl"] .sidebar{left:auto;right:calc(-1 * var(--sidebar-w))}
+  html[dir="rtl"] .sidebar.mobile-open{right:0}
 }
