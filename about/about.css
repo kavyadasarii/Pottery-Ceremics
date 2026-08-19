@@ -887,15 +887,8 @@ body.dark-mode .cta-inner p {
   color: rgba(255, 240, 220, 0.65);
 }
 
-body.dark-mode .cta-outline {
-  border-color: #e8a96a;
-  color: #e8a96a;
-  background: transparent !important;
-}
-
 body.dark-mode .cta-outline:hover {
-  background: #e8a96a;
-  color: #1a120b;
+  color: #1c140d;
 }
 
 @keyframes fadeUp {
