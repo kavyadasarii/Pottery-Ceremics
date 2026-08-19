@@ -494,9 +494,6 @@ body.dark-mode .cta-banner .cta-outline { background: transparent; }
 }
 .service-card:hover .service-arrow { background: var(--primary); color: #fff; transform: translateX(3px); }
 
-/* =========================================
-   WHY CLAYCRAFT — REDESIGNED
-   ========================================= */
 
 .why-section {
   max-width: 1200px;
