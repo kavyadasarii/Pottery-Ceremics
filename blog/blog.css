@@ -181,6 +181,17 @@
   background: radial-gradient(circle, color-mix(in srgb, var(--primary) 9%, transparent) 0%, transparent 70%);
   pointer-events: none;
 }
+
+/* On small screens this oversized decorative circle (620px, negative
+   z-index) can corrupt paint/compositing of the fixed mobile nav drawer
+   above it — most visibly as invisible drawer link text in RTL mode.
+   Capping its size on mobile keeps the glow effect without triggering it. */
+@media (max-width: 900px) {
+  .featured-post-section::before {
+    width: 280px; height: 280px;
+    top: -60px;
+  }
+}
 .featured-inner {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
